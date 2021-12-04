@@ -7,23 +7,27 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>EixoSesi</title>
+    <script src="https://kit.fontawesome.com/76aff9d557.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./Assets//styles/style.css">
 </head>
 
 <body>
     <header>
         <div class="container container_header">
+            <a  class="btn_menu" href="javascript:void(0)" onclick="botaoDoMenu()">
+                <i id="hoverMenu" class="fas fa-bars"></i>
+            </a>
             <img id="logo" src="./Assets/Logo_SESI_vermelho.jpg" alt="Logo Sesi vermelho">
-            <nav class="nav_header">
-                <a href="#">INÍCIO</a>
-                <a href="#porQue">POR QUÊ?</a>
-                <a href="#TP">TEMPOS DE PANDEMIA</a>
-                <a href="#comoAjudar">COMO AJUDAR?</a>
+            <nav id="links" class="nav_header">
+                <a href="#inicio" onclick="botaoDoMenu()">INÍCIO</a>
+                <a href="#porQue" onclick="botaoDoMenu()">POR QUÊ?</a>
+                <a href="#TP" onclick="botaoDoMenu()">TEMPOS DE PANDEMIA</a>
+                <a href="#comoAjudar" onclick="botaoDoMenu()">COMO AJUDAR?</a>
             </nav>
         </div>
     </header>
     <main>
-        <section class="banner">
+        <section id="inicio" class="banner">
             <h1>ENFRENTAMENTO DA PANDEMIA</h1>
         </section>
         <section id="porQue" class="container sectionContent containerPorQue">
@@ -183,6 +187,24 @@
     <footer class="containerFooter">
         <p>Centro Educacional SESI 074 - 2021 - São Paulo</p>
     </footer>
+
+    <script>
+        function botaoDoMenu(){
+            var menu = document.getElementById("links");
+            var logo = document.getElementById("logo")
+
+            if (screen.width <= 640) {
+                if(menu.style.display === "flex"){
+                    menu.style.display = "none"
+                    logo.style.display = "unset"
+                }
+                else{
+                    menu.style.display = "flex"
+                    logo.style.display = "none"
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
